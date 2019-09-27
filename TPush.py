@@ -70,7 +70,9 @@ def main():
             sendDocument(chat_id = CHAT_ID, file = filepath, caption = message)
         else:
             sendDocument(chat_id = CHAT_ID, file = filepath)
-    
+    else:
+        print('File size exceeded limit of 50MB!')
+        sys.exit(1)
 
 
 if __name__ == '__main__':
