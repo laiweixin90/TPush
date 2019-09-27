@@ -7,9 +7,15 @@ import sys
 
 MAX_FILE_SIZE = 50000000 # 50MB size limit
 BOT_TOKEN = os.environ.get('TPUSH_BOT_TOKEN')
+CHAT_ID = os.environ.get('TPUSH_TARGET_ID')
+
 
 if not BOT_TOKEN:
     print('Must provide Telegram Bot Token!')
+    sys.exit(1)
+
+if not CHAT_ID:
+    print('Must provide Telegram Chat ID!')
     sys.exit(1)
 
 BASE_URL = 'https://api.telegram.org/bot{}/'.format(BOT_TOKEN)
